@@ -1,0 +1,53 @@
+
+server:
+  port: 8001
+eureka:
+  client:
+    # 是否将自己注册到Eureka Server，默认为true。
+    register-with-eureka: true
+    # 是否从Eureka Server获取注册的服务信息,默认值true
+    fetch-registry: true
+    serviceUrl:
+      # Eureka服务器的地址，类型为HashMap，缺省的Key为 defaultZone；缺省的Value为 http://localhost:8761/eureka
+      # 如果服务注册中心为高可用集群时，多个注册中心地址以逗号分隔。
+      defaultZone: http://registry:8761/eureka
+spring:
+  application:
+    name: service-core
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://127.0.0.1:3306/building_core?useUnicode=true&characterEncoding=utf8&useSSL=false
+    password: ROOT
+    druid:
+      initial-size: 10
+      max-active: 20
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 1800000
+    password:
+    jedis:
+      pool:
+        max-active: 20
+        max-wait: 5000
+        max-idle: 5
+        min-idle: 0
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+mybatis-plus:
+  # 执行mapper.xml文件位置
+  mapper-locations: dao/**/*.xml
+  configuration:
+    # 打印日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #识别小驼峰
+    map-underscore-to-camel-case: true
+    #自动映射
+    auto-mapping-behavior: full
+  type-aliases-package: com.zhly.po
+
+
+
