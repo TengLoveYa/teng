@@ -9,8 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>servcer-eureka</module>
-        <module>service-zuul</module>
         <module>service-core</module>
         <module>utils-bean</module>
     </modules>

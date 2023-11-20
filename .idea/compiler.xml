@@ -8,13 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="utils-bean" />
-        <module name="service-zuul" />
-        <module name="servcer-eureka" />
         <module name="service-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="client-eureka" target="1.8" />
+      <module name="servcer-eureka" target="1.8" />
+      <module name="service-zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
